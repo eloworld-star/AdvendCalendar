@@ -12,8 +12,8 @@ total = 0
 
 file1 = open('file2.txt', 'r')
 for line in file1:
-    val1 = line.split()[0]
-    val2 = line.split()[1]
+    val1 = line[0]
+    val2 = line[2]
     #case win
     if val1 == 'A' and val2 == 'Y' or val1 == 'C' and val2 == 'X' or val1 == 'B' and val2 == 'Z':
         total += 6 + NbrPtsShape(val2)
