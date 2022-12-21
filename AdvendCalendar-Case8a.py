@@ -41,7 +41,7 @@ while posY < nbrLine:
 
 #passage droite-gauche
 posY = 0
-while posX < nbrLine:
+while posY < nbrLine:
     posX = nbrCol-1
     lastSave = -1
     while posX >= 0:
@@ -69,16 +69,23 @@ while posX < nbrCol:
     posY = nbrLine-1
     lastSave = -1
     while posY >= 0:
-        if main[posY][posX]:
+        if main[posY][posX] > lastSave:
             lastSave = main[posY][posX]
             addEnd(posY, posX)
         posY-=1
     posX+=1
 
 #calcul du nombre d'arbre visible
+total = 0
 for line in end:
     for element in line:
         if element == 1:
             total+=1
+
+
+#print(main)
+#print("===================================")
+#print(end)
+#print("===================================")
 
 print(total)
